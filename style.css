@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#timer {
+    padding: 9rem;
+    align-items: stretch;
+}
+
+.oclock {
+    display: flex;
+    padding: 3rem;
+    border: 0.4rem solid;
+    border-radius: 50%;    
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.display {
+    font-size: 5rem;
+}
+
+.fa-regular {
+
+    animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.btns {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.btns i {
+    margin: 1rem;
+}
