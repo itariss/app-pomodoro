@@ -5,9 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
             rel="stylesheet"
-            type="text/css"
-            href="bootstrap/css/bootstrap.min.css"
         />
         <link rel="stylesheet" href="style.css" />
         <script
@@ -20,16 +19,17 @@
         <section id="timer">
             <div class="flex-container">
                 <div class="oclock">
-                    <div class="display">25</div>
-                    <i class="display"> : </i>
-                    <div class="display">00</div>
+                    <div id="minutes" class="display">25</div>
+                    <i class="fa-regular fa-colon display"> : </i>
+                    <div id="seconds" class="display">00</div>
                 </div>
             </div>
             <div class="flex-container btns">
-                <i class="fa-solid fa-play"></i>
-                <i class="fa-solid fa-pause"></i>
-                <i class="fa-solid fa-stop"></i>
+                <i id="play" class="fa-solid fa-play"></i>
+                <i id="pause" class="fa-solid fa-pause"></i>
+                <i id="stop" class="fa-solid fa-stop"></i>
             </div>
         </section>
+        <script src="script.js"></script>
     </body>
 </html>
