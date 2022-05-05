@@ -3,8 +3,15 @@
     padding: 0;
 }
 
+html {
+    background: linear-gradient(#7474BF, #348AC7);
+    height: 100%;
+}
 :root {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Major Mono Display', monospace;
+}
+
+body {
 }
 
 #timer {
@@ -14,15 +21,20 @@
 
 .oclock {
     display: flex;
-    padding: 3rem;
+    padding: 4.25rem;
+    width: max-content;
     border: 0.4rem solid;
-    border-radius: 50%;    
+    font-weight: 800;
+    color: aliceblue;
+    
 }
 
 .flex-container {
     display: flex;
     justify-content: center;
+    margin: auto;
 }
+
 
 .display {
     font-size: 5rem;
@@ -30,7 +42,7 @@
 
 .fa-regular {
 
-    animation: blink 1s steps(5, start) infinite;
+    animation: blink 1s steps(4, start) infinite;
 }
 
 @keyframes blink {
@@ -46,4 +58,10 @@
 
 .btns i {
     margin: 1rem;
+    color: aliceblue;
+}
+
+.btns i:hover {
+    cursor: pointer;
+    color: black;
 }
