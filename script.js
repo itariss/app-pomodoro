@@ -2,11 +2,8 @@ var play = document.querySelector("#play");
 var pause = document.querySelector("#pause");
 var stop = document.querySelector("#stop");
 var breakTime = false;
-var alredyPlaying = false;
 
 play.addEventListener("click", function () {
-    alredyPlaying = true;
-
     var timerInterval;
     minutes = document.querySelector("#minutes");
     seconds = document.querySelector("#seconds");
