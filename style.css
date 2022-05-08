@@ -4,40 +4,59 @@
 }
 
 html {
-    background: linear-gradient(#7474BF, #348AC7);
+    background: linear-gradient(35deg, #7474BF, #348AC7);
     height: 100%;
 }
+
 :root {
-    font-family: 'Major Mono Display', monospace;
+    --font-timer: 'Major Mono Display', monospace;
+    --font-text: 'Montserrat', sans-serif;
+}
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    font-family: var(--font-text);
 }
 
-body {
+li {
+    margin: 1.2rem;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem auto 5rem auto;
+    color: aliceblue;
+    font-size: 3rem;
+    font-family: var(--font-text);
+    text-shadow: 2px 2px 4px black;
 }
 
 #timer {
-    padding: 9rem;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-timer);
+    
+    
 }
 
 .oclock {
     display: flex;
-    padding: 4.25rem;
+    padding: 8.25rem;
     width: max-content;
-    border: 0.4rem solid;
-    font-weight: 800;
+    font-weight: 1000;
     color: aliceblue;
-    
-}
-
-.flex-container {
-    display: flex;
-    justify-content: center;
-    margin: auto;
+    background: url("/bg.png") center no-repeat;
+    background-size: cover;
 }
 
 
 .display {
     font-size: 5rem;
+
+    text-shadow: 1px 5px 2px black;
+
 }
 
 .fa-regular {
@@ -54,11 +73,14 @@ body {
 .btns {
     font-size: 2rem;
     padding: 1rem;
+    margin: 2.2rem;
 }
 
 .btns i {
     margin: 1rem;
     color: aliceblue;
+    text-shadow: 1px 1px 2px black;
+    transition: 300ms;
 }
 
 .btns i:hover {
