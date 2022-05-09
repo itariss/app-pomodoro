@@ -7,10 +7,10 @@ const stopButton = document.querySelector('#stop')
 const minutesOnTimer = document.querySelector('#minutes')
 const secondsOnTimer = document.querySelector('#seconds')
 
-// Divide por 60 e se tem os segundos
+// Divide por 60 e se tem os minutos
 const workSessionDuration = 1500 // 25min
 const breakSessionDuration = 300 // 5min
-let timeLeftOnSession = 0
+let timeLeftOnSession = 1500
 let isTimerRunning = false
 let isTimerStopped = false
 let currentSchedule = 'Work'
@@ -81,7 +81,7 @@ function toggleTimer(reset = false) {
   }
 }
 
-// Inicia ou remoceça a contagem
+// Inicia ou recomeça a contagem
 playButton.addEventListener('click', function () {
   toggleTimer()
 })
