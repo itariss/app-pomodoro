@@ -2,43 +2,26 @@ var play = document.querySelector("#play");
 var pause = document.querySelector("#pause");
 var stop = document.querySelector("#stop");
 var breakTime = false;
+var timerInterval;
+minutes = document.querySelector("#minutes").textContent;
+seconds = document.querySelector("#seconds").textContent;
 
 play.addEventListener("click", function () {
-    var timerInterval;
-    minutes = document.querySelector("#minutes");
-    seconds = document.querySelector("#seconds");
+    toogleBtns(play, pause);
 
-    if (breakTime == false) {
-        timerInterval = setInterval(workTimer, 1000);
-    } else {
-        timerInterval = setInterval(breakTimer, 1000);
-    }
-
-    if (minutes.textContent == 25 && seconds.textContent == "00") {
-        minutes.textContent = 24;
-        seconds.textContent = 59;
-    }
-    if (breakTime && seconds.textContent == "00") {
-        minutes.textContent = 4;
-        seconds.textContent = 59;
-    }
-
-    if (minutes.textContent == 0 && seconds.textContent == "00") {
-        timerInterval = clearInterval(timerInterval);
-    }
-    play.addEventListener("click", function () {
-        timerInterval = clearInterval(timerInterval);
-    });
+    timerInterval = clearInterval(timerInterval);
+    playTimer();
 });
 
 pause.addEventListener("click", function () {
-    minutes = minutes.textContent;
-    seconds = seconds.textContent;
+    toogleBtns(pause, play);
+
+    clearInterval(timerInterval);
 });
 
 stop.addEventListener("click", function () {
-    minutes = document.querySelector("#minutes");
-    seconds = document.querySelector("#seconds");
+    toogleBtns(pause, play);
+
     if (breakTime == false) {
         minutes.textContent = 25;
         seconds.textContent = "00";
@@ -46,6 +29,7 @@ stop.addEventListener("click", function () {
         minutes.textContent = 5;
         seconds.textContent = "00";
     }
+    return minutes && seconds;
 });
 
 function workTimer() {
@@ -53,7 +37,7 @@ function workTimer() {
         seconds.innerHTML--;
         if (seconds.textContent == 0) {
             minutes.textContent--;
-            seconds.textContent = 60;
+            seconds.textContent = 59;
             if (minutes.textContent < 0) {
                 minutes.textContent = 5;
                 seconds.textContent = "00";
@@ -76,7 +60,7 @@ function breakTimer() {
         seconds.textContent--;
         if (seconds.textContent == 0) {
             minutes.textContent--;
-            seconds.textContent = 60;
+            seconds.textContent = 59;
             if (minutes.textContent < 0) {
                 minutes.textContent = 25;
                 seconds.textContent = "00";
@@ -92,4 +76,34 @@ function breakTimer() {
         }
         return seconds.textContent;
     }
+}
+
+function playTimer() {
+    minutes = document.querySelector("#minutes");
+    seconds = document.querySelector("#seconds");
+
+    if (breakTime == false) {
+        timerInterval = setInterval(workTimer, 1000);
+    } else {
+        timerInterval = setInterval(breakTimer, 1000);
+    }
+
+    if (minutes.textContent == 25 && seconds.textContent == "00") {
+        minutes.textContent = 24;
+        seconds.textContent = 59;
+    }
+    if (breakTime && seconds.textContent == "00") {
+        minutes.textContent = 4;
+        seconds.textContent = 59;
+    }
+
+    if (minutes.textContent == 0 && seconds.textContent == "00") {
+        timerInterval = clearInterval(timerInterval);
+    }
+    return minutes && seconds;
+}
+
+function toogleBtns(btn1, btn2) {
+    btn1.style.display = "none";
+    btn2.style.display = "inline";
 }
