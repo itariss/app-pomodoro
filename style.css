@@ -87,3 +87,7 @@ h1 {
     cursor: pointer;
     color: black;
 }
+
+#pause {
+    display: none;
+}
