@@ -107,3 +107,5 @@ function toogleBtns(btn1, btn2) {
     btn1.style.display = "none";
     btn2.style.display = "inline";
 }
+
+function timer() {}
