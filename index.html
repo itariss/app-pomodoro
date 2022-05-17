@@ -8,7 +8,7 @@
             href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
         <script
             src="https://kit.fontawesome.com/379118b5c6.js"
             crossorigin="anonymous"
@@ -33,7 +33,7 @@
     </header>
     <body>
         <div class="config btns">
-            <i class="fa-solid fa-gear">
+            <i id="setup" class="fa-solid fa-gear"></i>
                 <select id="time-section">
                     <option>25:00</option>
                     <option>30:00</option>
@@ -44,6 +44,7 @@
             </i>
         </div>
         <section id="timer">
+            
             <div class="oclock">
                 <div id="minutes" class="display">25</div>
                 <i class="fa-regular fa-colon display"> : </i>
@@ -51,13 +52,13 @@
             </div>
 
             <div class="btns">
-                <i id="mug" class="fa-solid fa-mug-hot"></i>
-                <i id="suitcase" class="fa-solid fa-suitcase"></i>
+                <i id="work" class="fa-solid fa-suitcase"></i>
+                <i id="break" class="fa-solid fa-mug-hot"></i>
                 <i id="play" class="fa-solid fa-play"></i>
                 <i id="pause" class="fa-solid fa-pause"></i>
                 <i id="stop" class="fa-solid fa-stop"></i>
             </div>
         </section>
-        <script src="script.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
