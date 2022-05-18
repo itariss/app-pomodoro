@@ -41,6 +41,7 @@ setup.addEventListener("click", () => {
 selectTimeSection.addEventListener("click", () => {
     event.stopPropagation();
     minutes = 25;
+    seconds = 0;
     for (let i = 1; i <= selectTimeSection.length; i++) {
         if (selectTimeSection.selectedIndex === 0) {
             minutes = 25;
@@ -50,6 +51,7 @@ selectTimeSection.addEventListener("click", () => {
             standardMinutesDisplay = minutes;
         }
     }
+    breakTime = false;
     minutesDisplay.innerHTML = minutes;
     secondsDisplay.innerHTML = "00";
     clearInterval(timerInterval);
@@ -84,7 +86,6 @@ breakSection.addEventListener("click", () => {
     toogleBtns(breakSection, workSection);
     toogleBtns(pause, play);
     breakTime = true;
-
     standardDisplay();
     clearInterval(timerInterval);
 });
@@ -99,6 +100,8 @@ workSection.addEventListener("click", () => {
 });
 
 function standardDisplay() {
+    timerRunning = false;
+
     seconds = 60;
     minutes = standardMinutesDisplay;
     secondsDisplay.innerHTML = "00";
