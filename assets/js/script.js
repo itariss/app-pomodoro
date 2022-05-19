@@ -69,7 +69,6 @@ play.addEventListener("click", () => {
 
 pause.addEventListener("click", () => {
     toogleBtns(pause, play);
-
     clearInterval(timerInterval);
 });
 
