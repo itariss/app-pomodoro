@@ -24,6 +24,9 @@ let setup = document.querySelector("#setup");
 let alarm = new Audio("/assets/audio/alarm.mp3");
 let show = true;
 
+let background = document.querySelector("body");
+let nav = document.querySelector(".nav");
+
 window.addEventListener("click", () => {
     alarm.load();
 });
@@ -40,8 +43,9 @@ setup.addEventListener("click", () => {
 
 selectTimeSection.addEventListener("click", () => {
     event.stopPropagation();
+    timerRunning = false;
     minutes = 25;
-    seconds = 0;
+    seconds = 60;
     for (let i = 1; i <= selectTimeSection.length; i++) {
         if (selectTimeSection.selectedIndex === 0) {
             minutes = 25;
@@ -64,7 +68,7 @@ play.addEventListener("click", () => {
     timerRunning ? true : minutes--;
     timerRunning = true;
 
-    timerInterval = setInterval(playTimer, 1000);
+    timerInterval = setInterval(playTimer, 30);
 });
 
 pause.addEventListener("click", () => {
@@ -87,6 +91,7 @@ breakSection.addEventListener("click", () => {
     breakTime = true;
     standardDisplay();
     clearInterval(timerInterval);
+    breakBackground();
 });
 
 workSection.addEventListener("click", () => {
@@ -94,8 +99,8 @@ workSection.addEventListener("click", () => {
     toogleBtns(workSection, breakSection);
     toogleBtns(pause, play);
     standardDisplay();
-
     clearInterval(timerInterval);
+    workBackground();
 });
 
 function standardDisplay() {
@@ -148,11 +153,11 @@ function endSection() {
         clearInterval(timerInterval);
         if (!breakTime) {
             toogleBtns(breakSection, workSection);
-
+            breakBackground();
             breakTime = true;
         } else {
             toogleBtns(workSection, breakSection);
-
+            workBackground();
             breakTime = false;
         }
         standardDisplay();
@@ -164,4 +169,14 @@ function endSection() {
 function toogleBtns(btn1, btn2) {
     btn1.style.display = "none";
     btn2.style.display = "inline";
+}
+
+function breakBackground() {
+    background.classList.add("break");
+    nav.classList.add("nav-break");
+}
+
+function workBackground() {
+    background.classList.remove("break");
+    nav.classList.remove("nav-break");
 }
