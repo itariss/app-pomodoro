@@ -7,17 +7,29 @@
     --font-timer: "Major Mono Display", monospace;
     --font-text: "Montserrat", sans-serif;
     --background-color: #f4a261;
+    --background-color-break: #57949c;
 }
 
 body {
     background-color: var(--background-color);
+    transition: 700ms;
 }
+
+.break {
+    background-color: var(--background-color-break);
+}
+
 .nav {
     display: flex;
     justify-content: flex-end;
     list-style: none;
     background-color: #e76f51;
     font-family: var(--font-text);
+    transition: 700ms;
+}
+
+.nav-break {
+    background-color: #1e5b63;
 }
 
 li {
