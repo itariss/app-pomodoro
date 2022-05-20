@@ -68,7 +68,7 @@ play.addEventListener("click", () => {
     timerRunning ? true : minutes--;
     timerRunning = true;
 
-    timerInterval = setInterval(playTimer, 30);
+    timerInterval = setInterval(playTimer, 1000);
 });
 
 pause.addEventListener("click", () => {
